@@ -150,7 +150,10 @@ describe 'POST /db/classroom/~/members', ->
               expect(res.statusCode).toBe(200)
               Classroom.findById classroomID, (err, classroom) ->
                 expect(classroom.get('members').length).toBe(1)
-                done()
+                expect(classroom.get('members')?[0]?.equals(user2.get('_id'))).toBe(true)
+                User.findById user2.get('_id'), (err, user2) ->
+                  expect(user2.get('role')).toBe('student')
+                  done()
 
   # TODO: Re-enable when we enforce this again
   xit 'does not work if the user is a teacher', (done) ->

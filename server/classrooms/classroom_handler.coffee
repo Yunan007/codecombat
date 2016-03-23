@@ -66,7 +66,15 @@ ClassroomHandler = class ClassroomHandler extends Handler
         return @sendDatabaseError(res, err) if err
         members.push req.user.get('_id')
         classroom.set('members', members)
-        return @sendSuccess(res, @formatEntity(req, classroom))
+        # TODO: remove teacher check here after forbidden above
+        if req.user.get('role') not in ['student', 'teacher']
+          User.findById(req.user.get('_id')).exec (err, user) =>
+            user.set('role', 'student')
+            user.save (err, user) =>
+              return @sendDatabaseError(res, err) if err
+              return @sendSuccess(res, @formatEntity(req, classroom))
+        else
+          return @sendSuccess(res, @formatEntity(req, classroom))
 
   removeMember: (req, res, classroomID) ->
     userID = req.body.userID
