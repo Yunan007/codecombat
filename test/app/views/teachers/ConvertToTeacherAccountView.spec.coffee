@@ -98,7 +98,6 @@ describe 'ConvertToTeacherAccountView (/teachers/convert)', ->
         form.submit()
 
       it 'requires confirmation', ->
-        expect(view.openModalView).toHaveBeenCalled()
         request = jasmine.Ajax.requests.mostRecent()
         expect(request.url).not.toBe('/db/trial.request')
         expect(request.method).not.toBe('POST')
@@ -122,12 +121,12 @@ describe 'ConvertToTeacherAccountView (/teachers/convert)', ->
       form.submit()
 
     it 'creates a new TrialRequest with the information', ->
-      request = jasmine.Ajax.requests.mostRecent()
-      expect(request.url).toBe('/db/trial.request')
+      request = _.last(jasmine.Ajax.requests.filter((r) -> _.string.startsWith(r.url, '/db/trial.request')))
+      expect(request).toBeTruthy()
       expect(request.method).toBe('POST')
       attrs = JSON.parse(request.params)
-      expect(attrs.properties.firstName).toBe('Mr')
-    
+      expect(attrs.properties?.firstName).toBe('Mr')
+
     it 'redirects to /courses/teachers', ->
       spyOn(application.router, 'navigate')
       request = jasmine.Ajax.requests.mostRecent()
@@ -138,4 +137,13 @@ describe 'ConvertToTeacherAccountView (/teachers/convert)', ->
       expect(application.router.navigate).toHaveBeenCalled()
       args = application.router.navigate.calls.argsFor(0)
       expect(args[0]).toBe('/courses/teachers')
- 
+
+     it 'sets a teacher role', ->
+      spyOn(application.router, 'navigate')
+      request = jasmine.Ajax.requests.mostRecent()
+      request.respondWith({
+        status: 201
+        responseText: JSON.stringify(_.extend({_id:'fraghlarghl'}, JSON.parse(request.params)))
+      })
+      expect(me.get('role')).toBe(successForm.role.toLowerCase())
+

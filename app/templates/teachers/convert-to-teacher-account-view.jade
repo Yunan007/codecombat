@@ -7,21 +7,19 @@ block content
         .modal-header
           .button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
         .modal-body(data-i18n="teachers_quote.learn_more_modal")
-          
+
   .container
     form
       .row.text-center
         .col-md-offset-2.col-md-8
           h3.m-t-3(data-i18n="teachers_quote.convert_account_title")
-          h4(data-i18n="teachers_quote.create_account_subtitle")
+          h4(data-i18n="[html]teachers_quote.create_account_subtitle")
           .alert.alert-info.m-y-2
             div
-              span.spr(data-i18n="new_home.logged_in_as")
+              span.spr(data-i18n="teachers_quote.not")
               strong= me.broadName()
-              span.spr .
-              span.spr(data-i18n="courses.not_you") Not you?
-              a#logout-link(data-i18n="login.log_out")
-              
+              | ?
+              a.spl#logout-link(data-i18n="login.log_out")
             if me.get('role') === 'student'
               div#conversion-warning.m-t-2
                 span.spr(data-i18n="[html]teachers_quote.conversion_warning")
@@ -37,18 +35,18 @@ block content
           #email-form-group.form-group
             label.control-label(data-i18n="general.email")
             input.form-control(disabled=true value=me.get('email'))
-      
+
       .row.m-y-2
         .col-md-offset-2.col-md-4.col-sm-6
           .form-group
             label.control-label(data-i18n="general.first_name")
             input.form-control(name="firstName" value=me.get('firstName') || '')
-      
+
         .col-md-4.col-sm-6
           .form-group
             label.control-label(data-i18n="general.last_name")
             input.form-control(name="lastName" value=me.get('lastName') || '')
-            
+
       .row.m-y-2
         .col-md-offset-2.col-md-4.col-sm-6
           .form-group
@@ -58,7 +56,7 @@ block content
             .help-block.small
               em.text-info(data-i18n="teachers_quote.phone_number_help")
             input.form-control(name="phoneNumber")
-            
+
         .col-md-4.col-sm-6
           .form-group
             label.control-label(data-i18n="teachers_quote.role_label")
@@ -72,30 +70,30 @@ block content
               option(data-i18n="teachers_quote.principal", value="Principal")
               option(data-i18n="teachers_quote.superintendent", value="Superintendent")
               option(data-i18n="teachers_quote.parent", value="Parent")
-              
+
       #form-school-info
         .row.m-y-2
           .col-md-offset-2.col-md-4.col-sm-6
             .form-group
               label.control-label(data-i18n="teachers_quote.organization_label")
               input.form-control(name="organization")
-              
+
           .col-md-4.col-sm-6
             .form-group
               label.control-label(data-i18n="teachers_quote.city")
               input.form-control(name="city")
-              
+
         .row.m-y-2
           .col-md-offset-2.col-md-4.col-sm-6
             .form-group
               label.control-label(data-i18n="teachers_quote.state")
               input.form-control(name="state")
-              
+
           .col-md-4.col-sm-6
             .form-group
               label.control-labellabel.control-label(data-i18n="teachers_quote.country")
               input.form-control(name="country")
-              
+
       #form-students-info
         .row.m-y-2
           .col-md-offset-2.col-md-4
@@ -112,7 +110,7 @@ block content
                 option 201-500
                 option 501-1000
                 option 1000+
-                
+
         .form-group
           .row.m-y-2
             .col-md-offset-2.col-md-10
@@ -142,7 +140,7 @@ block content
                   span(data-i18n="nav.other").spr
                   span(data-i18n="teachers_quote.please_explain")
               input#other-education-level-input.form-control
-              
+
       #anything-else-row.row.m-y-2
         .col-md-offset-2.col-md-8
           label.control-label
@@ -150,5 +148,5 @@ block content
             span.spl.text-muted(data-i18n="signup.optional")
           textarea.form-control(rows=8, name="notes")
       #buttons-row.row.m-y-2.text-center
-        input#create-account-btn.btn.btn-lg.btn-primary(type="submit" data-i18n="[value]teachers_quote.convert_account")
-        
+        input#create-account-btn.btn.btn-lg.btn-primary(type="submit" data-i18n="[value]teachers_quote.convert_account_title")
+

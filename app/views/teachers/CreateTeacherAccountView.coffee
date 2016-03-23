@@ -147,11 +147,10 @@ module.exports = class CreateTeacherAccountView extends RootView
     else
       newUser.set('password', @$('input[name="password1"]').val())
     newUser.save(null, options)
-    newUser.once 'sync', -> application.router.navigate('/courses/teacher', { trigger: true })
+    newUser.once 'sync', -> application.router.navigate(SIGNUP_REDIRECT, { trigger: true })
     newUser.once 'error', errors.showNotyNetworkError
     attrs = _.extend(attrs, @gplusAttrs, @facebookAttrs)
-    
-    
+
   # GPlus signup
 
   onClickGPlusSignupButton: ->

@@ -113,9 +113,9 @@ module.exports = class ConvertToTeacherAccountView extends RootView
     errors.showNotyNetworkError(arguments...)
 
   onTrialRequestSubmit: ->
+    me.setRole @trialRequest.get('properties').role.toLowerCase(), true
     storage.remove(FORM_KEY)
     application.router.navigate('/courses/teachers', {trigger: true})
-    
 
 formSchema = {
   type: 'object'
