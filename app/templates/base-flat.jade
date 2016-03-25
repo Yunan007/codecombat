@@ -57,12 +57,15 @@
                         a(href="/user/#{me.getSlugOrID()}", data-i18n="nav.profile")
                       li
                         a(href="/account/settings", data-i18n="play.settings")
-                      li
-                        a(href="/account/payments", data-i18n="account.payments")
-                      li
-                        a(href="/account/subscription", data-i18n="account.subscription")
-                      li
-                        a(href="/account/prepaid", data-i18n="account.prepaid_codes")
+                      unless me.get('role') === 'student'
+                        li
+                          a(href="/account/payments", data-i18n="account.payments")
+                      unless me.get('role') === 'teacher' || me.get('role') === 'student'
+                        li
+                          a(href="/account/subscription", data-i18n="account.subscription")
+                      unless me.get('role') === 'student'
+                        li
+                          a(href="/account/prepaid", data-i18n="account.prepaid_codes")
                       li
                         a#logout-button(data-i18n="login.log_out")
 
