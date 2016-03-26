@@ -1,13 +1,13 @@
 module.exports = nativeDescription: "Bahasa Indonesia", englishDescription: "Indonesian", translation:
   home:
-    slogan: "Belajar Membuat Kode Dengan Bermain Sebuah Permainan"
-    no_ie: "Maaf, CodeCombat tidak dapat dijalankan pada Internet Explorer 8 dan sebelumnya" # Warning that only shows up in IE8 and older
+    slogan: "Belajar Membuat Kode Sambil Bermain Game"
+    no_ie: "Maaf, CodeCombat tidak dapat dijalankan pada Internet Explorer 8 dan versi sebelumnya" # Warning that only shows up in IE8 and older
     no_mobile: "Maaf. CodeCombat tidak dibuat untuk perangkat mobile" # Warning that shows up on mobile devices
-    play: "Bermain" # The big play button that opens up the campaign view.
+    play: "Main" # The big play button that opens up the campaign view.
     play_campaign_version: "Mainkan Versi Kampanye" # Shows up under big play button if you only play /courses
-    old_browser: "Uh oh, Maaf. Versi peramban anda terlalu lama " # Warning that shows up on really old Firefox/Chrome/Safari
+    old_browser: "Oh, Maaf. Versi Browser anda sudah terlalu tua" # Warning that shows up on really old Firefox/Chrome/Safari
     old_browser_suffix: "Anda bisa mencoba, tapi mungkin tidak akan berjalan."
-    ipad_browser: "Berita buruk: CodeCombat Tidak dapat dijalankan dengan iPad di peramban. Berita bagus: Aplikasi iPad kami sedang menunggu persetujuan Apple."
+    ipad_browser: "Berita buruk: CodeCombat Tidak dapat dijalankan di Browser pada perangkat iPad. Berita bagus: Aplikasi iPad kami sedang menunggu persetujuan Apple."
     campaign: "Kampanye"
     for_beginners: "Pemula"
     multiplayer: "Multipemain" # Not currently shown on home page
@@ -15,18 +15,18 @@ module.exports = nativeDescription: "Bahasa Indonesia", englishDescription: "Ind
     or_ipad: "atau unduh untuk iPad"
 
   new_home:
-    slogan: "The most engaging game for learning programming."
+    slogan: "Game paling menarik untuk belajar pemrograman."
     classroom_edition: "Edisi Ruang Kelas:"
     learn_to_code: "Belajar membuat kode:"
     teacher: "Guru"
     student: "Murid"
     play_now: "Mainkan Sekarang"
-    im_a_teacher: "Aku seorang guru"
-    im_a_student: "Aku seorang murid"
+    im_a_teacher: "Saya seorang guru"
+    im_a_student: "Saya seorang murid"
     learn_more: "Pelajari lebih lanjut"
-    classroom_in_a_box: "Sebuah ruangan kelas di-dalam-kotak untuk mengajar sains komputer."
-    codecombat_is: "CodeCombat adalah sebuah panggung untuk para murid untuk belajar ilmu komputer sambil bermain permainan yang sesungguhnya." # {change}
-    our_courses: "Kursus kami telah di uji melalui para pemain secara khusus untuk unggul di ruang kelas, bahkan oleh para guru yang mempunyai sedikit atau tanpa pengalaman pemrograman sebelumnya." # {change}
+    classroom_in_a_box: "Sebuah ruang kelas di-dalam-kotak untuk mengajar ilmu komputer."
+    codecombat_is: "CodeCombat adalah sebuah tempat bagi para murid untuk belajar ilmu komputer sambil bermain game yang sesungguhnya." # {change}
+    our_courses: "Kursus kami telah teruji melalui para pemain secara khusus untuk unggul di ruang kelas, bahkan oleh para guru yang mempunyai sedikit atau tanpa pengalaman pemrograman sebelumnya." # {change}
 #    top_screenshots_hint: "Students write code and see their changes update in real-time"
     designed_with: "Dirancang untuk para guru"
     real_code: "Kode asli yang diketik"
@@ -182,24 +182,24 @@ module.exports = nativeDescription: "Bahasa Indonesia", englishDescription: "Ind
     log_in: "Masuk"
     logging_in: "Sedang masuk"
     log_out: "Keluar"
-#    forgot_password: "Forgot your password?"
-#    authenticate_gplus: "Authenticate G+"
-#    load_profile: "Load G+ Profile"
-#    finishing: "Finishing"
-#    sign_in_with_facebook: "Sign in with Facebook"
-#    sign_in_with_gplus: "Sign in with G+"
-#    signup_switch: "Want to create an account?"
+    forgot_password: "Lupa kata sandi?"
+    authenticate_gplus: "Autentikasi G+"
+    load_profile: "Memuat Profil G+"
+    finishing: "Penyelesaian"
+    sign_in_with_facebook: "Masuk dengan Facebook"
+    sign_in_with_gplus: "Masuk dengan G+"
+    signup_switch: "Ingin Membuat Akun?"
 
 #  signup:
-#    email_announcements: "Receive announcements by email"
-#    creating: "Creating Account..."
-#    sign_up: "Sign Up"
-#    log_in: "log in with password"
-#    required: "You need to log in before you can go that way."
-#    login_switch: "Already have an account?"
-#    school_name: "School Name and City"
-#    optional: "optional"
-#    school_name_placeholder: "Example High School, Springfield, IL"
+#    email_announcements: "terima berita lewat  email"
+#    creating: "Sedang membuat akun ..."
+#    sign_up: "Daftar"
+#    log_in: "Masuk dengan kata sandi"
+#    required: "Kamu harus masuk dulu sebelum melanjutkan."
+#    login_switch: "Sudah punya akun?"
+#    school_name: "Nama Sekolah dan Kota"
+#    optional: "opsional"
+#    school_name_placeholder: "Contoh SMA, Springfield, IL"
 #    or_sign_up_with: "or sign up with"
 #    connected_gplus_header: "You've successfully connected with Google+!"
 #    connected_gplus_p: "Finish signing up so you can log in with your Google+ account."
